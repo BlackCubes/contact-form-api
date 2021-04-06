@@ -1,0 +1,19 @@
+{
+  "name": "contact-form-api",
+  "version": "1.0.0",
+  "description": "A simple API that can be used to send a basic email:to from a contact form with inputs of email, name, contact, and possibly others",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlackCubes/contact-form-api.git"
+  },
+  "author": "Elias Gutierrez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BlackCubes/contact-form-api/issues"
+  },
+  "homepage": "https://github.com/BlackCubes/contact-form-api#readme"
+}
