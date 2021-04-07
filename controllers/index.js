@@ -1,3 +1,3 @@
-const globalErrorController = require('./errorController');
+const globalErrorHandler = require('./errorController');
 
-module.exports = { globalErrorController };
+module.exports = { globalErrorHandler };
