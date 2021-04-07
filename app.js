@@ -8,6 +8,9 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const compression = require('compression');
 
+const { AppError } = require('./utils');
+const { globalErrorHandler } = require('./controllers');
+
 const app = express();
 
 // Proxy
@@ -53,5 +56,14 @@ app.use(xss());
 
 // Compression
 app.use(compression());
+
+// Errors
+// -- unknown routes
+app.all('*', (req, res, next) => {
+  next(new AppError(`Could not find ${req.originalUrl} on this server!`, 404));
+});
+
+// -- global errors
+app.use(globalErrorHandler);
 
 module.exports = app;
