@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
@@ -16,6 +17,10 @@ const app = express();
 
 // Proxy
 app.enable('trust proxy');
+
+// Enable Template Engine
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
 
 // Implement CORS
 app.use(cors());
