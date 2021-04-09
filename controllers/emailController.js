@@ -29,7 +29,7 @@ exports.sendEmail = catchAsync(async (req, res, next) => {
   } catch (err) {
     return next(
       new AppError(
-        'There was an error sending the provided email! Please try again later.',
+        'There was an error sending the provided email. Please try again later.',
         500
       )
     );
