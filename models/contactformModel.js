@@ -26,6 +26,10 @@ const contactformSchema = new mongoose.Schema({
     lowercase: true,
     validate: [validator.isEmail, 'Please provide a valid email!'],
   },
+  website: {
+    type: String,
+    required: [true, 'A website is required!'],
+  },
   createdAt: {
     type: Date,
     default: Date.now(),
