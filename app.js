@@ -10,6 +10,7 @@ const compression = require('compression');
 
 const { AppError } = require('./utils');
 const { globalErrorHandler } = require('./controllers');
+const { emailRouter } = require('./routes');
 
 const app = express();
 
@@ -56,6 +57,9 @@ app.use(xss());
 
 // Compression
 app.use(compression());
+
+// Routes
+app.use('/api/v1/email', emailRouter);
 
 // Errors
 // -- unknown routes
