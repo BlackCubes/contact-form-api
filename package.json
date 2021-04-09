@@ -4,7 +4,9 @@
   "description": "A simple API that can be used to send a basic email:to from a contact form with inputs of email, name, contact, and possibly others",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "start:prod": "SET NODE_ENV=production&&nodemon server.js"
   },
   "repository": {
     "type": "git",
