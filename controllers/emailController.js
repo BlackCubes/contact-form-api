@@ -1,8 +1,18 @@
 const { ContactForm } = require('../models');
-const { AppError, catchAsync, Email } = require('../utils');
+const {
+  AppError,
+  catchAsync,
+  Email,
+  filterObj,
+  sanitize,
+} = require('../utils');
 
 exports.sendEmail = catchAsync(async (req, res, next) => {
-  const newContact = await ContactForm.create(req.body);
+  const filteredBody = sanitize(
+    filterObj(req.body, 'name', 'email', 'message', 'email_to', 'website')
+  );
+
+  const newContact = await ContactForm.create(filteredBody);
 
   if (!newContact) {
     return next(
