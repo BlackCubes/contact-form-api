@@ -1,3 +1,3 @@
-const ContactForm = required('./contactformModel.js');
+const ContactForm = require('./contactformModel.js');
 
 module.exports = { ContactForm };
