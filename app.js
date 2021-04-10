@@ -64,6 +64,9 @@ app.use(xss());
 app.use(compression());
 
 // Routes
+app.get('/', (req, res) => {
+  res.send('Hello! Welcome to the Contact Form API!');
+});
 app.use('/api/v1/email', emailRouter);
 
 // Errors
