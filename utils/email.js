@@ -49,7 +49,7 @@ module.exports = class Email {
       to: this.to,
       subject,
       html,
-      text: htmlToText(text),
+      text: htmlToText(html),
     };
 
     await this.newTransport().sendMail(mailOptions);
